@@ -12,6 +12,8 @@ Python の機械学習実験のためのサンプル.
         - `README.md`
 - `data`
     - 実験に使うデータを格納する
+        - `data_visual.png`
+        - `sample_data.csv`
         - `README.md`
 - `experiment_tools`
     - Python の機械学習実験における自動 log 記録のシステムテンプレート([参照](https://github.com/akita-pooh/experiment_tools))
