@@ -25,7 +25,7 @@ def get_directory(cfg: dict, date_time: datetime.datetime) -> dict:
         上書きされた実験で参照する config データ
     """
     # 実験結果の出力先のディレクトリ名を指定
-    output_dir = "../../outputs"
+    output_dir = "../outputs"
     model_output_dir = output_dir + "/" + cfg["model_type"]
 
     # config 内の "model_type" の値が存在しない場合はディレクトリを新たに作成する
