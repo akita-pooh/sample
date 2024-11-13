@@ -22,6 +22,21 @@ Python の機械学習実験のためのサンプル.
         - `set_up.py`
         - `start_logging.py`
         - `README.md`
+- `models`
+    - 機械学習実験で使うモデルを管理する
+        - `README.md`
+- `outputs`
+    - 実験結果を保存する
+        - `README.md`
+- `scripts`
+    - 実験を実際に行う
+        - `README.md`
+- `trainers`
+    - 実験のモデル学習のスクリプトを管理する
+        - `README.md`
+- `utils`
+    - 各モデルでの実験に共通する有用な関数をまとめる
+        - `README.md`
 
 ## ファイルの説明
 - `.gitignore`
