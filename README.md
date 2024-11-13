@@ -24,6 +24,7 @@ Python の機械学習実験のためのサンプル.
         - `README.md`
 - `models`
     - 機械学習実験で使うモデルを管理する
+        - `__init__.py`
         - `README.md`
 - `outputs`
     - 実験結果を保存する
@@ -33,9 +34,11 @@ Python の機械学習実験のためのサンプル.
         - `README.md`
 - `trainers`
     - 実験のモデル学習のスクリプトを管理する
+        - `__init__.py`
         - `README.md`
 - `utils`
     - 各モデルでの実験に共通する有用な関数をまとめる
+        - `__init__.py`
         - `README.md`
 
 ## ファイルの説明
@@ -62,7 +65,7 @@ pip3 install -r requirements.txt
 `PYTHONPATH` を通して追加する.  
 
 ```
-echo 'export PYTHONPATH=../..' >> ~/.bashrc
+echo 'export PYTHONPATH=..' >> ~/.bashrc
 source ~/.bashrc
 ```
 
