@@ -5,10 +5,27 @@ Python の機械学習実験のためのサンプル.
 機械学習実験のためのフレームワークのサンプルを提供する.
 
 ## フォルダの説明
-
+- `config`
+    - 実験内容ごとに使う config ファイルを管理する
+        - `default`
+        - `experiment`
+        - `README.md`
+- `data`
+    - 実験に使うデータを格納する
+        - `README.md`
+- `experiment_tools`
+    - Python の機械学習実験における自動 log 記録のシステムテンプレート([参照](https://github.com/akita-pooh/experiment_tools))
+        - `__init__.py`
+        - `set_random_seed.py`
+        - `set_up.py`
+        - `start_logging.py`
+        - `README.md`
 
 ## ファイルの説明
-
+- `.gitignore`
+    - GitHub にアップロードしないファイルやフォルダを指定
+- `requirements.txt`
+    - プロジェクトで必要な Python ライブラリの管理
 
 ## ローカル環境のセットアップ
 仮想環境を構築する.  
