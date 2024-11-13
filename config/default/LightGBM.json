@@ -1,0 +1,18 @@
+{
+    "model_type": "LightGBM",
+    "log": {
+        "log_file": "LightGBM.log",
+        "log_formatter": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    },
+    "seed": 8192,
+    "sampling_rate": {
+        "train": 0.7,
+        "valid": 0.5
+    },
+    "data_path": "../data/sample_data.csv",
+    "params": {
+        "objective": "regression",
+        "metric": "rmse"
+    },
+    "lag": 10
+}
