@@ -17,6 +17,7 @@ Python の機械学習実験のためのサンプル.
         - `README.md`
 - `experiment_tools`
     - Python の機械学習実験における自動 log 記録のシステムテンプレート([参照](https://github.com/akita-pooh/experiment_tools))
+        - `log.png`
         - `__init__.py`
         - `set_random_seed.py`
         - `set_up.py`
