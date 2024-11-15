@@ -12,7 +12,19 @@
     "data_path": "../data/sample_data.csv",
     "params": {
         "objective": "regression",
-        "metric": "rmse"
+        "metric": "rmse",
+        "boosting_type": "gbdt",
+        "num_leaves": 31,
+        "learning_rate": 0.05,
+        "feature_fraction": 0.9
     },
-    "lag": 10
+    "lag": 10,
+    "training": {
+        "num_boost_round": 200,
+        "early_stopping": {
+            "stopping_rounds": 50,
+            "verbose": true
+        },
+        "verbose_eval": 10
+    }
 }
