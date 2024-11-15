@@ -16,7 +16,8 @@
         "boosting_type": "gbdt",
         "num_leaves": 31,
         "learning_rate": 0.05,
-        "feature_fraction": 0.9
+        "feature_fraction": 0.9,
+        "force_col_wise": true
     },
     "lag": 10,
     "training": {
