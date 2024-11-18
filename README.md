@@ -13,6 +13,9 @@ Python の機械学習実験のためのサンプル.
 - `data`
     - 実験に使うデータを格納する
         - `data_visual.png`
+        - `sample_data_downsized.csv`
+        - `sample_data_without_noise_downsized.csv`
+        - `sample_data_without_noise.csv`
         - `sample_data.csv`
         - `README.md`
 - `experiment_tools`
@@ -24,22 +27,30 @@ Python の機械学習実験のためのサンプル.
         - `start_logging.py`
         - `README.md`
 - `models`
-    - 機械学習実験で使うモデルを管理する
+    - 深層学習モデルのアーキテクチャを作成/管理する
         - `__init__.py`
+        - `networks.py`
         - `README.md`
 - `outputs`
     - 実験結果を保存する
         - `README.md`
 - `scripts`
-    - 実験を実際に行う
+    - 機械学習実験を実際に行うディレクトリ
+        - `train_lgb.py`
+        - `train_nn.py`
         - `README.md`
 - `trainers`
-    - 実験のモデル学習のスクリプトを管理する
+    - 深層学習モデルの学習に必要なフレームワーク
         - `__init__.py`
+        - `loop.py`
+        - `opt.py`
         - `README.md`
 - `utils`
     - 各モデルでの実験に共通する有用な関数をまとめる
         - `__init__.py`
+        - `cfg_diff.py`
+        - `preprocessing.py`
+        - `result.py`
         - `README.md`
 
 ## ファイルの説明
