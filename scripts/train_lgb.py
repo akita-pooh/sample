@@ -1,4 +1,5 @@
 import lightgbm as lgb
+import pickle
 
 from experiment_tools.set_up import start_experiment
 from utils.cfg_diff import get_config, get_diff
@@ -53,6 +54,11 @@ model = lgb.train(
 
 # 結果の出力先ディレクトリを指定
 out_dir = cfg["log"]["log_file"].replace("LightGBM.log", "")
+
+# モデルの保存
+filename = "lgb_model.pkl"
+with open(f"{out_dir}/{filename}", "wb") as f:
+    pickle.dump(model, f)
 
 # 学習過程のロスを描画
 plot_data(cfg, training_data, out_dir, "LightGBM")

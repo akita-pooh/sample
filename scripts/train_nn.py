@@ -101,11 +101,11 @@ model, training_data = train_nn(
 # 結果の出力先ディレクトリを指定
 out_dir = cfg["log"]["log_file"].replace("NeuralNetwork.log", "")
 
-# 学習過程のロスを描画
-plot_data(cfg, training_data, out_dir, "NeuralNetwork")
-
 # モデルの保存
 torch.save(model.state_dict(), f"{out_dir}model_weight.pth")
+
+# 学習過程のロスを描画
+plot_data(cfg, training_data, out_dir, "NeuralNetwork")
 
 # 予測結果を描画
 predict(eval_df, "NeuralNetwork", out_dir, model)
