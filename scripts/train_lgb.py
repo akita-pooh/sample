@@ -55,10 +55,10 @@ model = lgb.train(
 out_dir = cfg["log"]["log_file"].replace("LightGBM.log", "")
 
 # 学習過程のロスを描画
-plot_data(cfg, training_data, out_dir)
+plot_data(cfg, training_data, out_dir, "LightGBM")
 
 # 特徴量の重要度を描画
 extract_feature_importance(model, out_dir)
 
 # 予測結果を描画
-predict(eval_df, model, out_dir)
+predict(eval_df, "LightGBM", out_dir, model)

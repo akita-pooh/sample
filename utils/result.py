@@ -1,10 +1,12 @@
 import lightgbm as lgb
 import matplotlib.pyplot as plt
 import pandas as pd
+import torch
 
 
 def plot_data(
-        cfg: dict, training_data: dict, out_dir: str
+        cfg: dict, training_data: dict, out_dir: str,
+        model_type: str
     ) -> None:
     """
     学習過程のロスの遷移を表示する関数
@@ -17,13 +19,18 @@ def plot_data(
         学習過程のロスのデータ
     out_dir: str
         結果を保存するディレクトリのパス
+    model_type: str
+        扱うモデルのタイプ
 
     Returns
     ----------
     None
     """
     # 学習で得られたデータをまとめる
-    metric = cfg["params"]["metric"]
+    if model_type == "LightGBM":
+        metric = cfg["params"]["metric"]
+    else:
+        metric = cfg["criterion"]
     train_y = [
         item for item in training_data["Train"][metric]
     ]
@@ -78,7 +85,8 @@ def extract_feature_importance(
 
 
 def predict(
-        eval_df: pd.DataFrame, model: lgb.basic.Booster, out_dir: str
+        eval_df: pd.DataFrame, model_type: str, out_dir: str,
+        model
     ) -> None:
     """
     データの予測をする関数
@@ -87,10 +95,12 @@ def predict(
     ----------
     eval_df: pd.DataFrame
         評価用のデータフレーム
-    model: lgb.basic.Booster
-        実験で学習させたモデルのインスタンス
+    model_type: str
+        実験で学習させたモデルのタイプ￥
     out_dir: str
         結果を保存するディレクトリのパス
+    model:
+        実験で学習させたモデルのインスタンス
 
     Returns
     ----------
@@ -105,11 +115,19 @@ def predict(
     y_preds = []
     for i in range(len(eval_df)):
         tmp_dataset = [x[i]] + y_data
-        y_pred = model.predict(
-            [tmp_dataset], num_iteration=model.best_iteration
-        )[0]
-        y_preds.append(y_pred)
-        y_data = [y_pred] + y_data[:-1]
+        if model_type == "LightGBM":
+            y_pred = model.predict(
+                [tmp_dataset], num_iteration=model.best_iteration
+            )[0]
+            y_preds.append(y_pred)
+            y_data = [y_pred] + y_data[:-1]
+        else:
+            tmp_dataset = torch.tensor(
+                [tmp_dataset]
+            ).reshape(1, -1).to("cpu")
+            y_pred = model(tmp_dataset)[0]
+            y_preds.append(float(y_pred))
+            y_data = [float(y_pred)] + y_data[:-1]
     
     # 画像のスタイルを指定する
     plt.figure(figsize=(18, 12))
