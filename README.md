@@ -59,6 +59,14 @@ Python の機械学習実験のためのサンプル.
 - `requirements.txt`
     - プロジェクトで必要な Python ライブラリの管理
 
+## LightGBM を使用したことがない人へ
+本サンプルでは LightGBM のモデルを利用する.  
+これを使うためにはローカル環境で前もって次のコマンドを実行する必要がある.
+
+```
+brew install libomp
+```
+
 ## ローカル環境のセットアップ
 仮想環境を構築する.  
 
@@ -80,6 +88,10 @@ pip3 install -r requirements.txt
 echo 'export PYTHONPATH=..' >> ~/.bashrc
 source ~/.bashrc
 ```
+
+## 実行方法
+`scripts` ディレクトリに移動して, 実行したいファイルを選択する.  
+他のディレクトリで実行すると失敗する.
 
 ## Commit ルール
 Commit の際は以下のルールに従って意味のある変更ごとに行う.  
