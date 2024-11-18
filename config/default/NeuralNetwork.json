@@ -1,0 +1,61 @@
+{
+    "model_type": "NeuralNetwork",
+    "log": {
+        "log_file": "NeuralNetwork.log",
+        "log_formatter": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    },
+    "seed": 8192,
+    "sampling_rate": {
+        "train": 0.7,
+        "valid": 0.5
+    },
+    "architecture": [
+        ["linear1", "input_dim", 8],
+        ["relu1"],
+        ["linear2", 8, 8],
+        ["relu2"],
+        ["linear3", 8, "output_dim"]
+    ],
+    "data_path": "../data/sample_data_without_noise_downsized.csv",
+    "torch_type": "Float",
+    "dataloader_params": {
+        "batch_size": 16,
+        "shuffle": false,
+        "sampler": null,
+        "batch_sampler": null,
+        "num_workers": 0,
+        "collate_fn": null,
+        "pin_memory": false,
+        "drop_last": false,
+        "timeout": 0,
+        "worker_init_fn": null,
+        "prefetch_factor": null,
+        "persistent_workers": false,
+        "pin_memory_device": ""
+    },
+    "params": {
+        "optimizer": "adam",
+        "lr": 1e-4,
+        "lr_decay": 0.0,
+        "weight_decay": 0.0,
+        "initial_accumulator_value": 0.0,
+        "eps": 1e-10,
+        "betas": [0.9, 0.999],
+        "amsgrad": false,
+        "foreach": null,
+        "maximize": false,
+        "capturable": false,
+        "differentiable": false,
+        "fused": null,
+        "lambd": 1e-4,
+        "alpha": 0.75,
+        "t0": 1000000.0,
+        "decoupled_weight_decay": false,
+        "momentum": 0.0,
+        "dampening": 0.0,
+        "nesterov": false,
+        "epochs": 100
+    },
+    "lag": 10,
+    "criterion": "mse"
+}
