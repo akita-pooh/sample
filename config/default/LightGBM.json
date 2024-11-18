@@ -9,7 +9,7 @@
         "train": 0.7,
         "valid": 0.5
     },
-    "data_path": "../data/sample_data.csv",
+    "data_path": "../data/sample_data_without_noise_downsized.csv",
     "params": {
         "objective": "regression",
         "metric": "rmse",
