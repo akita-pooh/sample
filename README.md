@@ -90,8 +90,9 @@ source ~/.bashrc
 ```
 
 ## 実行方法
-`scripts` ディレクトリに移動して, 実行したいファイルを選択する.  
-他のディレクトリで実行すると失敗する.
+1. `config/default` ディレクトリ内の該当する config をコピーし, `config/experiment` に貼り付ける.
+2. 必要に応じて `config/experiment` に貼り付けた config に変更を加える.
+3. `scripts` ディレクトリに移動して, 実行したいファイルを選択する. 他のディレクトリで実行すると失敗する.
 
 ## Commit ルール
 Commit の際は以下のルールに従って意味のある変更ごとに行う.  
